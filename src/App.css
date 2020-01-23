@@ -1,3 +1,4 @@
+
 :root {
     --dark-blue: #2e2e46;
     --light-menu: #f5f6fa;
@@ -33,71 +34,72 @@
   
 
 
-.masterhead {
+.hero {
     width: 100vw;
     height: 600px;
     background: url('./assets/img/masterhead.png') no-repeat;
     background-size: cover;
     position:relative;
   }
-  .masterhead .top {
+  .hero .top {
     margin-bottom: 100px;
     padding: 40px 20px 20px 20px;
   }
-  .masterhead .top .left {
+  .hero .top .left {
     float: left;
     width: 120px;
     height: auto;
   }
-  .masterhead .top .right {
+  .hero .top .right {
     float: right;
   }
-  .masterhead .top .right .input-group {
+ 
+  .hero .input-group {
     color: #fff !important;
     border-color: #fff !important;
     float: left;
     width: 200px;
     border-radius: 30px;
   }
-  .masterhead .top .right .input-group .ico {
+  .hero  .input-group .ico {
     color: #fff !important;
   }
-  .masterhead .top .right .input-group input {
+  .hero  .input-group input {
     background: transparent;
-    color: var(--white);
+    color: #fff;
   }
-  .masterhead .big-txt {
+  .hero .big-txt {
     font-weight: 600;
     font-size: 45px;
-    font-family: var(--font-bold);
-    color: var(--white);
+    font-family: 'Lato', sans-serif;
+    color: #fff
   }
-  .masterhead .button-group {
+  .hero .button-group {
     margin-top: 40px;
   }
-  .masterhead .btn-secondary {
+  .hero .btn-secondary {
     background: #ffb300;
     color: #003386;
     border:#ffb300;
     padding: 15px 25px;
     font-size: 14px;
   }
-  .masterhead .btn-secondary .ico {
+  .hero .btn-secondary .ico {
     float: right;
     margin: 2px 0 0 20px;
   }
-  .masterhead .btn-transparent {
+  .hero .btn-transparent {
     background: transparent;
-    color: var(--white);
-    border: solid 2px var(--white);
+    color: #fff;
+    border: solid 2px #fff;
     padding: 13px 35px;
     font-size: 14px;
     border-left: 0;
   }
-  .masterhead .content {
+  .hero .content {
     height: 440px;
   }
-  .masterhead .links-blue {
+  .hero .links-blue {
     position: absolute;
     background: rgba(0, 51, 134, 0.85);
     left: 15px;
@@ -107,25 +109,25 @@
     display: flex;
     justify-content: center;
   }
-  .masterhead .links-blue .link-item {
+  .hero .links-blue .link-item {
     color: #fff;
     float: left;
     padding: 10px 10px;
     cursor: pointer;
     font-size: 16px;
   }
-  .masterhead .links-blue .link-item:hover {
+  .hero .links-blue .link-item:hover {
     color: #ffb300;
   }
 
 
 @media(min-width: 1080px){
-  .masterhead{
+  .hero{
       background-position-y: -100px;
   }
 }
 @media(min-width: 1200px){
-  .masterhead{
+  .hero{
       background-position-y: -180px;
   }
 }
@@ -175,8 +177,8 @@
     margin-top: 200px;
     font-size: 32px;
     width: 150px;
-    color: var(--white);
-    font-family: var(--font-bold);
+    color: #fff;
+    font-family: 'Lato', sans-serif;
   }
   .featured .image {
     width: 100%;
@@ -199,7 +201,7 @@
   }
   .featured .overlay .content .name {
     font-size: 28px;
-    font-family: var(--font-bold);
+    font-family: 'Lato', sans-serif;
     margin-bottom: 30px;
   }
   .featured .overlay .content .price {
@@ -215,12 +217,12 @@
   .featured .overlay .btn-box .btn-icon {
     padding: 10px 15px 6px 15px;
     font-size: 20px;
-    background: var(--white);
+    background: #fff;
     border: 0 !important;
   }
 
-  /* Service */
 
+  /* Service */
 
   .services {
     background: #F6F6F6 !important;
@@ -255,8 +257,8 @@
   }
   .services .carousel-indicators li {
     background: #c5c5c5;
-    width: 8px;
-    height: 8px;
+    width: 15px;
+    height: 0px;
     border-radius: 50%;
   }
   .services .carousel-indicators li.active {
@@ -265,8 +267,9 @@
   
 
   /* Testimonial */
+
   .testimonial {
-    background: var(--white) !important;
+    background: #fff !important;
     width: 100%;
     padding: 80px 0 150px 0;
   }
@@ -302,9 +305,10 @@
   }
   .testimonial .testimony .icon-box .avatar-box .ico {
     font-size: 50px;
-    color: var(--white);
+    color: #fff;
     position: absolute;
     bottom: 0;
+    left: 12px;
   }
   .testimonial .testimony .txt-title {
     font-weight: 600;
@@ -331,8 +335,8 @@
   }
   .testimonial .carousel-indicators li {
     background: #c5c5c5;
-    width: 8px;
-    height: 8px;
+    width: 15px;
+    height: 0px;
     border-radius: 50%;
   }
   .testimonial .carousel-indicators li.active {
@@ -341,6 +345,7 @@
 
   
   /* Footer */
+
   .footer {
     width: 100%;
   }
@@ -393,13 +398,13 @@
   }
   .footer .newsletter .form input {
     border: 0 !important;
-    background: var(--white);
+    background: #fff;
     border-radius: 0;
     padding: 12px 30px;
   }
   .footer .newsletter .form .btn-black {
     background: #222222;
-    color: var(--white);
+    color: #fff;
     padding: 10px 0;
     width: 100%;
     text-align: center;

@@ -8,7 +8,7 @@ import Icon from "../Icon";
  const Hero = () => {
   console.log(iconList(iconSet));
     return (
-        <div className="masterhead ">
+        <div className="hero ">
         <div className="row justify-content-md-center">
           <div className="col-12 col-md-11 col-lg-10">
             <div className="top">

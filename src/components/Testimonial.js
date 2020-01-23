@@ -1,5 +1,6 @@
 import React from 'react'
 import Icon from "../Icon";
+import Carousel from 'react-bootstrap/Carousel'
 
 const Testimonial = () => {
     return (
@@ -13,8 +14,8 @@ const Testimonial = () => {
                 <li data-target="#carouselTestimonial" data-slide-to={0} className="active" />
                 <li data-target="#carouselTestimonial" data-slide-to={1} />
               </ol>
-              <div className="carousel-inner">
-                <div className="carousel-item active">
+              <Carousel>
+              <Carousel.Item>
                   <div className="row" style={{textAlign: 'center'}}>
                     <div className="col-12 col-lg-4 testimony">
                       <div className="icon-box">
@@ -59,8 +60,8 @@ const Testimonial = () => {
                       <div className="location">Nairobi</div>
                     </div>
                   </div>
-                </div>
-                <div className="carousel-item">
+                </Carousel.Item>
+                <Carousel.Item>
                   <div className="row" style={{textAlign: 'center'}}>
                     <div className="col-12 col-lg-4 testimony">
                       <div className="icon-box">
@@ -105,13 +106,12 @@ const Testimonial = () => {
                       <div className="location">Nairobi</div>
                     </div>
                   </div>
-                </div>
-              </div>
+                </Carousel.Item>
+              </Carousel>
             </div>
           </div>
         </div>
       </div>
-
         </div>
     )
 }
