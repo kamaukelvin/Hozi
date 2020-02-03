@@ -60,6 +60,7 @@
     float: left;
     width: 200px;
     border-radius: 30px;
+    background-color: transparent !important;
   }
   .hero  .input-group .ico {
     color: #fff !important;
@@ -119,6 +120,7 @@
   .hero .links-blue .link-item:hover {
     color: #ffb300;
   }
+
 
 
 @media(min-width: 1080px){
@@ -456,3 +458,22 @@
     color: #000;
   }
   
+
+
+  /* Login additional css */
+
+  /* .nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    z-index: 1 !important;
+} */
+.fixed-top {
+  position: relative !important;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}

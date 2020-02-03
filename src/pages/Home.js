@@ -1,10 +1,10 @@
 import React from 'react'
-import Hero from "../components/Hero"
-import Description from '../components/Description'
-import Featured from '../components/Featured'
-import Service from '../components/Service'
-import Testimonial from '../components/Testimonial'
-import Footer from '../components/Footer'
+import Hero from "../components/LandingPage/Hero"
+import Description from '../components/LandingPage/Description'
+import Featured from '../components/LandingPage/Featured'
+import Service from '../components/LandingPage/Service'
+import Testimonial from '../components/LandingPage/Testimonial'
+import Footer from '../components/LandingPage/Footer'
 
 const Home = () => {
     return (
