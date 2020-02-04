@@ -32,8 +32,8 @@ import tz from "../../assets/dist/images/tz.png"
                     </form>
                   </li>
                   <li className="col-3 float-right">
-                    <Link className="" to="/login">
-                      Login
+                    <Link className="" to="/register">
+                      Register
                     </Link>
                   </li>
                 </ul>

@@ -1,15 +1,18 @@
-import React ,{useState} from 'react'
+import React ,{useState,useContext} from 'react'
 import comregico from "../../../assets/dist/images/comregico.png"
 import tractico from "../../../assets/dist/images/tractico.png"
 import homeico from "../../../assets/dist/images/homeico.png"
 import axios from "axios"
 import { validateAll } from "indicative/validator"
+import {RegisterContext} from "../../../Context/RegisterContext"
 
 
-export default function BasicInfo(props) {
+export default function BasicInfo({changeTab}) {
+ 
+    const context = useContext(RegisterContext)
+    const {setStep}= context
 
 
-  
     const [newUser, setNewUser]= useState({
         contact:"",
         email: "",
@@ -24,6 +27,7 @@ export default function BasicInfo(props) {
             ...newUser,
           [evt.target.name]: value
         });
+        setErrors({})
         
       }
 
@@ -44,6 +48,7 @@ export default function BasicInfo(props) {
      const  handleSubmit = e => {
         console.log("this is what the user has entered",newUser)
         e.preventDefault();
+      
  
         // validate input fields
         const data = newUser;
@@ -59,7 +64,7 @@ export default function BasicInfo(props) {
         validateAll(data,rules, messages)
                 .then(()=>{
                     postUser()
-                    next()  })
+                })
                 .catch(errors=>{
                     console.log(errors)
                     // display errors
@@ -70,9 +75,9 @@ export default function BasicInfo(props) {
                 })
         
      }
-  const next = ()=> {
-        props.nextStep();
-      };
+//   const next = ()=> {
+//         props.nextStep();
+//       };
     return (
             <form onSubmit={e => handleSubmit(e)}>
             <div className="row">
@@ -87,7 +92,7 @@ export default function BasicInfo(props) {
                         <label className="redial-font-weight-800">Contact</label>
                         <input type="text" className="form-control bg-transparent" placeholder name="contact" value={newUser.contact} onChange={handleChange}
                             />
-                              {errors['name'] && <small className="text-danger">{errors['name']}</small>}
+                              {errors['contact'] && <small className="text-danger">{errors['contact']}</small>}
               
                         <small className="form-text">Only letters, numbers, and underscores are allowed.</small>
                     </div>
@@ -99,6 +104,7 @@ export default function BasicInfo(props) {
                         <label className="redial-font-weight-800">Email</label>
                         <input type="email" className="form-control bg-transparent" placeholder name="email"  value={newUser.email} onChange={handleChange}
                             />
+                             {errors['email'] && <small className="text-danger">{errors['email']}</small>}
                         <small className="form-text">6-character minimum; case sensitive.</small>
                     </div>
                     </div>
@@ -153,7 +159,7 @@ export default function BasicInfo(props) {
                 </div>
                 </div>
                 <div className="pager wizard">
-                <button className="next btn btn-primary btn-sm  text-uppercase px-5 float-sm-right mt-sm-0 mt-3"  type="submit">Next</button>
+                <button className="next btn btn-primary btn-sm  text-uppercase px-5 float-sm-right mt-sm-0 mt-3"  type="submit" onClick={changeTab}>Next</button>
                 </div>
                                 
             </form>

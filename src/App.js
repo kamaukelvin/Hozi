@@ -6,6 +6,7 @@ import './assets/css/slick.css'
 import { Route, Switch } from 'react-router-dom'
 import Home from "./pages/Home"
 import Properties from "./pages/Properties"
+import Register from './pages/Register';
 import Login from './pages/Login';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
    <Switch>
        <Route path="/" component={Home} exact />
        <Route path="/properties" component={Properties} exact />
+       <Route path="/register" component={Register} exact />
        <Route path="/login" component={Login} exact />
 
    </Switch>

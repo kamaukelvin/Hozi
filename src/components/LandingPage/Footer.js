@@ -31,7 +31,7 @@ const Footer = () => {
                   <input type="text" className="form-control" placeholder="YOUR EMAIL ADDRESS" v-model="email" />
                 </div>
                 <div className="col-12 col-md-6">
-                  <Link to="/login">
+                  <Link to="/register">
                   <button className="btn btn-black">SIGN UP</button>
                   </Link>
                 </div>

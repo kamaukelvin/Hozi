@@ -1,67 +1,37 @@
 /* eslint-disable default-case */
-import React,{Component} from 'react'
+import React,{useContext} from 'react'
 import BasicInfo from "./BasicInfo"
 import Activation from "./Activation"
 import FinishUp from "./FinishUp"
-
-export class Register extends Component {
-    state = {
-      step: 1,
-      
-    };
-  
-    // Proceed to next step
-    nextStep = () => {
-      const { step } = this.state;
-      this.setState({
-        step: step + 1
-      });
-    };
-  
-    // Go back to prev step
-    prevStep = () => {
-      const { step } = this.state;
-      this.setState({
-        step: step - 1
-      });
-    };
-  
+import {RegisterContext} from "../../../Context/RegisterContext"
 
   
-    render() {
-      const { step } = this.state;
+ function Register() {
  
-   
-  
+    const context = useContext(RegisterContext)
+    const {step}= context
+    console.log(context)
+    return (
+      <div>
+        {/* {(() => {
       switch (step) {
         case 1:
           return (
-            <BasicInfo
-              nextStep={this.nextStep}
-              handleChange={this.handleChange}
-             
-            />
-          );
+            <BasicInfo/>);
         case 2:
           return (
-            <Activation
-              nextStep={this.nextStep}
-              prevStep={this.prevStep}
-              handleChange={this.handleChange}
-            
-            />
-          );
+              <Activation/>
+                    );
         case 3:
-          return (
-            <FinishUp
-              nextStep={this.nextStep}
-              prevStep={this.prevStep}
-         
-            />
-          );
-     
+            return (
+              <FinishUp/>
+                );
+        // default:
+        // return null;
       }
-    }
+    })()} */}
+      </div>
+    )
   }
   
-  export default Register;
+  export default Register

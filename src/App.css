@@ -477,3 +477,6 @@
   left: 0;
   z-index: 1030;
 }
+.row{
+  overflow: hidden;
+}

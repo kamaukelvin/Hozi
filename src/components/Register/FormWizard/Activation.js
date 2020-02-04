@@ -1,18 +1,22 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import balloons from "../../../assets/dist/images/balloons.png"
+import {RegisterContext} from "../../../Context/RegisterContext"
 
 
-export default function Activation(props) {
+export default function Activation() {
 
-    const next = e => {
-        e.preventDefault();
-        props.nextStep();
-      };
+  const context = useContext(RegisterContext)
+  const {setStep}= context
+
+    // const next = e => {
+    //     e.preventDefault();
+    //     props.nextStep();
+    //   };
     
-      const back = e => {
-        e.preventDefault();
-        props.prevStep();
-      };
+    //   const back = e => {
+    //     e.preventDefault();
+    //     props.prevStep();
+    //   };
 
     
     return (
@@ -41,8 +45,8 @@ export default function Activation(props) {
             </div>
           </div>
           <div className="pager wizard">
-  <button className="next btn btn-primary btn-sm  text-uppercase px-5 float-sm-right mt-sm-0 mt-3" onClick={next}>Next</button>
-  <button className="next btn btn-primary btn-sm  text-uppercase px-5 float-sm-left mt-sm-0 mt-3" onClick={back}>Back</button>
+  <button className="next btn btn-primary btn-sm  text-uppercase px-5 float-sm-right mt-sm-0 mt-3" onClick={()=>setStep(3)}>Next</button>
+  <button className="next btn btn-primary btn-sm  text-uppercase px-5 float-sm-left mt-sm-0 mt-3" onClick={()=>setStep(1)}>Back</button>
 </div>
                                     
         </div>

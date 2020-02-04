@@ -1691,6 +1691,7 @@ input[type='radio'] + label:before{
 .loginrr .card-body{
   color: #888;
   padding-top: 0;
+  overflow: hidden;
 }
 .loginrr b{
   color: #555;

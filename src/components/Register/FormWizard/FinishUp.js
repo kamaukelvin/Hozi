@@ -1,14 +1,14 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import {Link} from "react-router-dom"
 import {Tab,Nav,} from "react-bootstrap"
 import comregico from "../../../assets/dist/images/comregico.png"
+import {RegisterContext} from "../../../Context/RegisterContext"
 
-export default function FinishUp(props) {
+export default function FinishUp() {
+  const context = useContext(RegisterContext)
+  const {setStep}= context
 
-    const back = e => {
-        e.preventDefault();
-        props.prevStep();
-      };
+
     return (
         <div>
 
@@ -95,11 +95,29 @@ export default function FinishUp(props) {
                                                 </div>
                                               </div>
                                             </div>
+                                            <div className="col-12 col-sm-6">
+                                        <div className="form">
+                                          <div className="form-group">
+                                            <label className="redial-font-weight-800 redial-dark">Password</label>
+                                            <input type="password" className="form-control bg-transparent" placeholder />
+                                            <small className="form-text">6-character minimum; case sensitive.</small>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div className="col-12 col-sm-6">
+                                        <div className="form">
+                                          <div className="form-group">
+                                            <label className="redial-font-weight-800 redial-dark">Confirm - Password</label>
+                                            <input type="password" className="form-control bg-transparent" placeholder />
+                                            <small className="form-text">6-character minimum; case sensitive.</small>
+                                          </div>
+                                        </div>
+                                      </div> 
                                             </div>
                                     
                                           </Tab.Pane>
                                           <Tab.Pane eventKey="single-entity">
-                                            <div className="tab-pane fade" >
+                                           
                                               <div className="card-body">
                                                 <div className="col-12 col-sm-12 col-lg-12 float-left">
                                                   <div className="comreg">
@@ -147,12 +165,7 @@ export default function FinishUp(props) {
                                                     </div>
                                                   </div>
                                                 </div>
-                                              </div>
-                                            </div>
-                                            </Tab.Pane> 
-                                    </Tab.Content>
-                                    <div className="col-12 col-sm-12">
-                                      <div className="col-12 col-sm-6">
+                                                <div className="col-12 col-sm-6">
                                         <div className="form">
                                           <div className="form-group">
                                             <label className="redial-font-weight-800 redial-dark">Password</label>
@@ -170,6 +183,12 @@ export default function FinishUp(props) {
                                           </div>
                                         </div>
                                       </div> 
+                                              </div>
+                                          
+                                            </Tab.Pane> 
+                                    </Tab.Content>
+                                    <div className="col-12 col-sm-12">
+                    
                                       <div className="col-12 col-sm-6 col-xl-4 mb-4 mb-xl-0">
                                         <div className="pricing-table text-center border redial-shadow">
                                           <span id="div1" className="hidrr badge badge-light">
@@ -235,7 +254,7 @@ export default function FinishUp(props) {
                                   </Tab.Container>
                                   </div>
                                   <ul className="pager wizard">
-                                <li className="next btn btn-primary btn-sm  text-uppercase px-5 float-sm-left mt-sm-0 mt-3" onClick={back} >Back</li>
+                                <li className="next btn btn-primary btn-sm  text-uppercase px-5 float-sm-left mt-sm-0 mt-3" onClick={()=>setStep(2)} >Back</li>
                                 <li className="next btn btn-primary btn-sm  text-uppercase px-5 float-sm-right mt-sm-0 mt-3" >Next</li>
                               </ul>
        
