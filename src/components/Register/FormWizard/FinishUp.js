@@ -1,19 +1,16 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {Link} from "react-router-dom"
-import {Tab,Nav,} from "react-bootstrap"
+import {Tab,Nav} from 'react-bootstrap'
 import comregico from "../../../assets/dist/images/comregico.png"
 
 export default function FinishUp(props) {
 
-    const back = e => {
-        e.preventDefault();
-        props.prevStep();
-      };
+    const [key, setKey]= useState('company')
     return (
         <div>
 
             <div className="row ">
-              <Tab.Container defaultActiveKey="company">
+              <Tab.Container activeKey={key} onSelect={k=>setKey(k)}>
                                     <div className="col-12 col-sm-12">
                                       <h4 className="card-title">Complete Registration</h4>
                                       <p>Lorem: ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip unga ya jogoo.</p>
@@ -46,8 +43,8 @@ export default function FinishUp(props) {
                                       </ul>
                                       </Nav>
                                       <Tab.Content>
-                                        <Tab.Pane eventKey="company">
-                                    
+                                        <Tab.Pane eventKey="company" title="company">
+                                       
                                           <div className="card-body">
                                             <div className="col-12 col-sm-12 col-lg-12 float-left">
                                               <div className="comreg">
@@ -55,7 +52,7 @@ export default function FinishUp(props) {
                                                 <h6 className="header-title pl-3 redial-relative">Company Registration</h6>
                                                 <div className="custom-file">
                                                   <input type="file" className="custom-file-input" id="inputGroupFile01" />
-                                                  <label className="custom-file-label" htmlFor="inputGroupFile01">Add Co Logo</label>
+                                                  <label className="custom-file-label" htmlFor="inputGroupFile01">Add Entity Logo</label>
                                                 </div>
                                               </div>
                                             </div>
@@ -98,8 +95,8 @@ export default function FinishUp(props) {
                                             </div>
                                     
                                           </Tab.Pane>
-                                          <Tab.Pane eventKey="single-entity">
-                                            <div className="tab-pane fade" >
+                                          <Tab.Pane eventKey="single-entity" title="single-entity" className="tab-pane fade">
+                                         
                                               <div className="card-body">
                                                 <div className="col-12 col-sm-12 col-lg-12 float-left">
                                                   <div className="comreg">
@@ -148,9 +145,9 @@ export default function FinishUp(props) {
                                                   </div>
                                                 </div>
                                               </div>
-                                            </div>
+                                       
                                             </Tab.Pane> 
-                                    </Tab.Content>
+                                            </Tab.Content>
                                     <div className="col-12 col-sm-12">
                                       <div className="col-12 col-sm-6">
                                         <div className="form">
@@ -235,7 +232,7 @@ export default function FinishUp(props) {
                                   </Tab.Container>
                                   </div>
                                   <ul className="pager wizard">
-                                <li className="next btn btn-primary btn-sm  text-uppercase px-5 float-sm-left mt-sm-0 mt-3" onClick={back} >Back</li>
+                                <li className="next btn btn-primary btn-sm  text-uppercase px-5 float-sm-left mt-sm-0 mt-3"  >Back</li>
                                 <li className="next btn btn-primary btn-sm  text-uppercase px-5 float-sm-right mt-sm-0 mt-3" >Next</li>
                               </ul>
        

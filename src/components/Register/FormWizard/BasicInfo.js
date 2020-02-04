@@ -6,26 +6,26 @@ import axios from "axios"
 import { validateAll } from "indicative/validator"
 
 
-export default function BasicInfo(props) {
+export default function BasicInfo() {
 
-
-  
     const [newUser, setNewUser]= useState({
         contact:"",
         email: "",
         module:"",
         promoCode:"",
     })
-    const [errors, setErrors]= useState({})
 
-    const handleChange=(evt)=> {
-        const value = evt.target.value;
-        setNewUser({
-            ...newUser,
-          [evt.target.name]: value
-        });
-        
-      }
+const [errors, setErrors]= useState({})
+
+const handleNewUserChange=(evt)=> {
+    const value = evt.target.value;
+    setNewUser({
+        ...newUser,
+      [evt.target.name]: value
+    });
+ 
+    
+  }
 
     //   post new user to api
 
@@ -39,12 +39,11 @@ export default function BasicInfo(props) {
         .catch(error => console.log(error));
     };
 
-      
 
      const  handleSubmit = e => {
         console.log("this is what the user has entered",newUser)
         e.preventDefault();
- 
+        
         // validate input fields
         const data = newUser;
         const rules= {
@@ -59,20 +58,26 @@ export default function BasicInfo(props) {
         validateAll(data,rules, messages)
                 .then(()=>{
                     postUser()
-                    next()  })
+                    })
                 .catch(errors=>{
                     console.log(errors)
                     // display errors
                     const formattedErrors={}
-                    errors.forEach(error=>formattedErrors[error.field]=error.message)
+                   errors.forEach(error=>formattedErrors[error.field]=error.message)
                     setErrors(formattedErrors)
               
                 })
+        // clear input fields after submitting
+                setNewUser({
+                    contact:"",
+                    email: "",
+                    module:"",
+                    promoCode:"",
+
+                })
         
      }
-  const next = ()=> {
-        props.nextStep();
-      };
+
     return (
             <form onSubmit={e => handleSubmit(e)}>
             <div className="row">
@@ -85,10 +90,8 @@ export default function BasicInfo(props) {
                     <div className="form">
                     <div className="form-group">
                         <label className="redial-font-weight-800">Contact</label>
-                        <input type="text" className="form-control bg-transparent" placeholder name="contact" value={newUser.contact} onChange={handleChange}
+                        <input type="text" className="form-control bg-transparent" placeholder name="contact" value={newUser.contact || ""} onChange={handleNewUserChange} required
                             />
-                              {errors['name'] && <small className="text-danger">{errors['name']}</small>}
-              
                         <small className="form-text">Only letters, numbers, and underscores are allowed.</small>
                     </div>
                     </div>
@@ -97,7 +100,7 @@ export default function BasicInfo(props) {
                     <div className="form">
                     <div className="form-group">
                         <label className="redial-font-weight-800">Email</label>
-                        <input type="email" className="form-control bg-transparent" placeholder name="email"  value={newUser.email} onChange={handleChange}
+                        <input type="email" className="form-control bg-transparent" placeholder name="email"  value={newUser.email || ""} onChange={handleNewUserChange} required
                             />
                         <small className="form-text">6-character minimum; case sensitive.</small>
                     </div>
@@ -105,22 +108,22 @@ export default function BasicInfo(props) {
                 </div>
                 <label className="float-left col-12 col-sm-12 redial-font-weight-800">Choose Module</label>
                 <div className="rounded-0 float-left col-12 col-sm-4">
-                    <input type="radio"  name="module" id="pmm" value= "pmm" onChange={handleChange}/>
+                    <input type="radio"  name="module" id="pmm" value= "pmm" onChange={handleNewUserChange}/>
                     <label htmlFor="pmm">PMM</label>
                 </div>
                 <div  className="rounded-0 float-left col-12 col-sm-4">
-                    <input type="radio" id="pm" name="module" value= "pm" onChange={handleChange}/>
+                    <input type="radio" id="pm" name="module" value= "pm" onChange={handleNewUserChange}/>
                     <label htmlFor="pm">PM</label>
                 </div>
                 <div className="rounded-0 float-left col-12 col-sm-4">
-                    <input type="radio" id="osp" name="module" value= "osp"  onChange={handleChange} />
+                    <input type="radio" id="osp" name="module" value= "osp"  onChange={handleNewUserChange} />
                     <label htmlFor="osp">OSP</label>
                 </div>
                 <div className="col-12 col-sm-12">
                     <div className="form">
                     <div className="form-group">
                         <label className="redial-font-weight-800">Promo Code</label>
-                        <input type="text" className="form-control bg-transparent" placeholder name="promoCode" value={newUser.promoCode} onChange={handleChange} />
+                        <input type="text" className="form-control bg-transparent" placeholder name="promoCode" value={newUser.promoCode} onChange={handleNewUserChange} />
                         <small className="form-text">6-character minimum; case sensitive.</small>
                     </div>
                     </div>
