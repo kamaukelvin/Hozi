@@ -55,7 +55,7 @@ export default function FinishUp() {
                                                 <h6 className="header-title pl-3 redial-relative">Company Registration</h6>
                                                 <div className="custom-file">
                                                   <input type="file" className="custom-file-input" id="inputGroupFile01" />
-                                                  <label className="custom-file-label" htmlFor="inputGroupFile01">Add Co Logo</label>
+                                                  <label className="custom-file-label" htmlFor="inputGroupFile01">Add Co. Logo</label>
                                                 </div>
                                               </div>
                                             </div>

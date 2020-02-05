@@ -1589,6 +1589,7 @@ select[multiple], select[size] {
     left: -129px;
     top: 10px;
     color: #333346;
+    z-index: -1;
 }
 .pricing-table h1 {
     font-size: 3rem;
