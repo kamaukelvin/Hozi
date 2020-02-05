@@ -10,7 +10,7 @@ import {RegisterContext} from "../../../Context/RegisterContext"
 export default function BasicInfo({changeTab}) {
  
     const context = useContext(RegisterContext)
-    const {setStep}= context
+    const {setStep, step, nextStep, prevStep}= context
 
 
     const [newUser, setNewUser]= useState({
@@ -63,7 +63,9 @@ export default function BasicInfo({changeTab}) {
 
         validateAll(data,rules, messages)
                 .then(()=>{
-                    postUser()
+                    postUser();
+                    nextStep()
+     
                 })
                 .catch(errors=>{
                     console.log(errors)
@@ -75,11 +77,11 @@ export default function BasicInfo({changeTab}) {
                 })
         
      }
-//   const next = ()=> {
-//         props.nextStep();
-//       };
+
     return (
-            <form onSubmit={e => handleSubmit(e)}>
+    
+   <form onSubmit={e => handleSubmit(e)}>
+     
             <div className="row">
                 <div className="col-12 col-sm-12 underlinebot linecolight">
                 <h4 className="card-title">Registration</h4>
@@ -159,7 +161,7 @@ export default function BasicInfo({changeTab}) {
                 </div>
                 </div>
                 <div className="pager wizard">
-                <button className="next btn btn-primary btn-sm  text-uppercase px-5 float-sm-right mt-sm-0 mt-3"  type="submit" onClick={changeTab}>Next</button>
+                <button className="next btn btn-primary btn-sm  text-uppercase px-5 float-sm-right mt-sm-0 mt-3"  type="submit" onClick={nextStep}>Next</button>
                 </div>
                                 
             </form>

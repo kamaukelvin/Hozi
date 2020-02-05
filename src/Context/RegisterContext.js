@@ -8,18 +8,13 @@ const RegisterContextProvider =(props)=>{
     
       // Proceed to next step
       const nextStep = () => {
- 
-        setStep({
-          step: step + 1
-        });
+        setStep(step + 1);
       };
     
       // Go back to prev step
      const  prevStep = () => {
       
-        setStep({
-          step: step - 1
-        });
+        setStep(step - 1);
       };
     
 

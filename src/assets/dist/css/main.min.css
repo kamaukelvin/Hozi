@@ -1677,7 +1677,7 @@ input[type='radio'] + label:before{
     width: 55%;
     height: 800px;
     left: -51px;
-    top: -20px;
+    top: -35px;
     background: #e52d27;
     background: -webkit-linear-gradient(to top, #b31217, #e52d27);
     background: linear-gradient(to top, #b31217, #e52d27);

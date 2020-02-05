@@ -6,17 +6,8 @@ import {RegisterContext} from "../../../Context/RegisterContext"
 export default function Activation() {
 
   const context = useContext(RegisterContext)
-  const {setStep}= context
+  const {setStep, nextStep, prevStep}= context
 
-    // const next = e => {
-    //     e.preventDefault();
-    //     props.nextStep();
-    //   };
-    
-    //   const back = e => {
-    //     e.preventDefault();
-    //     props.prevStep();
-    //   };
 
     
     return (
@@ -45,8 +36,8 @@ export default function Activation() {
             </div>
           </div>
           <div className="pager wizard">
-  <button className="next btn btn-primary btn-sm  text-uppercase px-5 float-sm-right mt-sm-0 mt-3" onClick={()=>setStep(3)}>Next</button>
-  <button className="next btn btn-primary btn-sm  text-uppercase px-5 float-sm-left mt-sm-0 mt-3" onClick={()=>setStep(1)}>Back</button>
+  <button className="next btn btn-primary btn-sm  text-uppercase px-5 float-sm-right mt-sm-0 mt-3" onClick={nextStep}>Next</button>
+  <button className="next btn btn-primary btn-sm  text-uppercase px-5 float-sm-left mt-sm-0 mt-3" onClick={prevStep}>Back</button>
 </div>
                                     
         </div>
